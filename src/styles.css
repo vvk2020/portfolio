@@ -16,6 +16,7 @@ body {
   --mat-stepper-container-color: transparent; /* фон */
   --mat-stepper-header-selected-state-label-text-color: var(--accent-color); /* заголовок элемента списка */
   --mat-stepper-header-label-text-size: var(--normal-font-size);
+  /* --mat-sys-title-small-size: var(--normal-font-size); */
   --mat-stepper-header-label-text-font: SanFrancisco, sans-serif;
   /* font-size: var(--mat-stepper-header-label-text-size, var(--mat-sys-title-small-size)); */
   /* font-family: var(--mat-stepper-header-label-text-font, var(--mat-sys-title-small-font)); */
@@ -46,6 +47,7 @@ p {
 ul {
   list-style-type: none;
   padding-left: 0;
+  margin: 0;
 }
 
 html,
@@ -65,7 +67,7 @@ li.list-item::before {
   left: 0;
   top: 0;
   color: var(--accent-color);
-  font-weight: bold;
+  font-weight: 700;
   font-size: 1.2em;
 }
 

@@ -4,12 +4,12 @@
     <!-- Должность -->
     <ng-template matStepLabel>{{ job.position }}</ng-template>
     <!-- Организация -->
-    <p>Организация: {{ job.company }}</p>
+    <p><span class="accent-text">Организация:</span> {{ job.company }}</p>
 
     <!-- Обязанности -->
     @if (job.options?.length) {
     <div class="responsibilities">
-      <p>Обязанности:</p>
+      <p class="accent-text">Обязанности:</p>
       <ul>
         @for (opt of job.options; track opt) {
         <li class="list-item">{{ opt }}</li>
@@ -19,8 +19,8 @@
     }
 
     <!-- Ресурсы -->
-    <p>Ресурсы:</p>
     @if (job.achievements?.length) {
+    <p class="accent-text">Ресурсы:</p>
     <ul>
       @for (ach of job.achievements; track $index) {
       <li class="list-item">

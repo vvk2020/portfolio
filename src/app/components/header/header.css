@@ -1,7 +1,7 @@
 :host {
   border: 2px solid var(--accent-color);
   display: flex;
-  align-items: center;
+  align-items: start;
   padding: 2%;
   border-radius: 25px;
   background-color: var(--card-bg);
@@ -9,7 +9,7 @@
 
 .text-block {
   padding: 20px;
-  width: 70%;
+  inline-size: 70%;
   flex-shrink: 0;
 }
 
@@ -44,12 +44,15 @@
   max-block-size: var(--rel-size-photo);
   max-inline-size: var(--rel-size-photo);
   object-fit: cover;
-  border-radius: 10%;
+  border-radius: 20px;
+
 }
 
 .contacts__list {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  inline-size: 100%;
 }
 
 .contacts__link {
@@ -98,6 +101,9 @@
 
   .contacts__logo-image {
     height: clamp(3rem, 2.0458rem + 4.0712vw, 4rem);
-    /* 48px; */
+  }
+
+  .text-block {
+    inline-size: 100%;
   }
 }

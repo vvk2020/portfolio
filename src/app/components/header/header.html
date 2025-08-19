@@ -1,9 +1,8 @@
 <div class="photo-wrapper">
-  <img src="/images/photo.jpg" alt="Фото Кузнецова ВВ" class="photo" />
+  <img src="/images/photo.jpg" alt="{{ person.surName }}" class="photo" />
 </div>
 <div class="text-block">
   <h1 class="main-title">{{ person | fullPersonName | uppercase }}</h1>
-  <!-- В h1 можно обойтись только интерполяцией (без fullPersonlName) -->
   <div class="position">{{ position | uppercase }}</div>
   <div class="person-data">
     @if (person.dateBird) {
@@ -17,32 +16,39 @@
 
     <!-- Цели посещения курса -->
     @if (person.course.goals.length) {
-    <p class="accent-text">Цели изучения курса:</p>
-    <ul>
-      @for (goal of person.course.goals; track $index) {
-      <li class="list-item">{{ goal }}</li>
-      }
-    </ul>
+    <div>
+      <p class="accent-text">Цели изучения курса:</p>
+      <ul>
+        @for (goal of person.course.goals; track $index) {
+        <li class="list-item">{{ goal }}</li>
+        }
+      </ul>
+    </div>
     }
-    <p><span class="accent-text">Источники информации о курсе:</span> {{ person.course.howKnow }}</p>
+    <p>
+      <span class="accent-text">Источники информации о курсе:</span>
+      {{ person.course.howKnow }}
+    </p>
 
     <!-- Контакты -->
     @if (person.contacts.length) {
-    <p class="accent-text contacts__title">Контакты:</p>
-    <ul class="contacts__list">
-      @for (contact of person.contacts; track $index) {
-      <li>
-        <a href="{{ contact.value }}" class="link contacts__link">
-          <img
-            src="{{ contact.logo }}"
-            alt="{{ contact.text }}"
-            class="contacts__logo-image"
-          />
-          <span class="contacts__text">{{ contact.text }}</span>
-        </a>
-      </li>
-      }
-    </ul>
+    <div>
+      <p class="accent-text contacts__title">Контакты:</p>
+      <ul class="contacts__list">
+        @for (contact of person.contacts; track $index) {
+        <li>
+          <a href="{{ contact.value }}" class="link contacts__link">
+            <img
+              src="{{ contact.logo }}"
+              alt="{{ contact.text }}"
+              class="contacts__logo-image"
+            />
+            <span class="contacts__text">{{ contact.text }}</span>
+          </a>
+        </li>
+        }
+      </ul>
+    </div>
     }
   </div>
 </div>

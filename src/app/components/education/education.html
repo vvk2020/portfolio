@@ -2,8 +2,8 @@
   @for (edu of education; track $index) {
   <mat-step>
     <ng-template matStepLabel>{{ edu.speciality }}</ng-template>
-    <p>Организация: {{ edu.organization }}</p>
-    <p>Квалификация: {{ edu.qualification }}</p>
+    <p><span class="accent-text">Организация:</span> {{ edu.organization }}</p>
+    <p><span class="accent-text">Квалификация:</span> {{ edu.qualification }}</p>
   </mat-step>
   }
 </mat-stepper>
