@@ -2,13 +2,14 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { IPerson } from '../interfaces/person';
 
 @Pipe({
-  name: 'fullPersonlName'
+  name: 'shortPersonName'
 })
-export class FullPersonlNamePipe implements PipeTransform {
+export class ShortPersonNamePipe implements PipeTransform {
+
 /**
- * Пайп для однотипного представления ФИО
+ * Пайп для короткого представления ФИО
  * @param person [IPerson] - объект, содержащий текстовые поля с ФИО
- * @returns 'Фамилия Имя Отчество'
+ * @returns 'Фамилия И.О.'
  */
   transform(person?: IPerson): string {
     if (!person) return '';
