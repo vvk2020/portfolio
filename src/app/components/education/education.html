@@ -1,11 +1,9 @@
-<section class="education">
-  <mat-stepper orientation="vertical" #stepper linear>
-    @for (edu of education; track $index) {
-    <mat-step>
-      <ng-template matStepLabel>{{ edu.speciality }}</ng-template>
-      <p>Организация: {{ edu.organization }}</p>
-      <p>Квалификация: {{ edu.qualification }}</p>
-    </mat-step>
-    }
-  </mat-stepper>
-</section>
+<mat-stepper orientation="vertical" #stepper linear>
+  @for (edu of education; track $index) {
+  <mat-step>
+    <ng-template matStepLabel>{{ edu.speciality }}</ng-template>
+    <p>Организация: {{ edu.organization }}</p>
+    <p>Квалификация: {{ edu.qualification }}</p>
+  </mat-step>
+  }
+</mat-stepper>

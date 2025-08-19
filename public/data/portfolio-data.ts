@@ -131,7 +131,7 @@ export const PORTFOLIO_DATA = {
       {
         title: "Cайт лаборатории кафедры",
         description: "Первая версия сайта. Стек: HTML, CSS",
-        url: "https://estprm.ru/",
+        url: "https://estprm.mrsu.ru/",
         year: "2019-09-01",
       }
     ],

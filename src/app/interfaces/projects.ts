@@ -18,6 +18,6 @@ export interface IProject {
  * @property {IProject[]} pet - pet
  */
 export interface IProjects {
-  commercial: IProject[];
-  pet: IProject[];
+  commercial?: IProject[];
+  pet?: IProject[];
 }
