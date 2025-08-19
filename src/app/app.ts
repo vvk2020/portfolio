@@ -10,6 +10,11 @@ import { Data } from './services/data';
 import { Card } from './components/card/card';
 import { CardsList } from './components/cards-list/cards-list';
 import { Education } from './components/education/education';
+import { IExperience } from './interfaces/experience';
+import { Experience } from './components/experience/experience';
+import { Skill } from './types/skills';
+import { Skills } from './components/skills/skills';
+import { Projects } from './components/projects/projects';
 
 @Component({
   selector: 'app-root',
@@ -19,9 +24,9 @@ import { Education } from './components/education/education';
     Card,
     CardsList,
     Education,
-    // Experience,
-    // Skills,
-    // Projects,
+    Experience,
+    Skills,
+    Projects,
 
     MatButtonModule,
     MatStepperModule,
@@ -36,14 +41,14 @@ import { Education } from './components/education/education';
 })
 export class App {
   protected education!: IEducation[];
-  // protected experiance!: IExperience[];
-  // protected hardSkills!: Skill[];
-  // protected softSkills!: Skill[];
+  protected experiance!: IExperience[];
+  protected hardSkills!: Skill[];
+  protected softSkills!: Skill[];
 
   constructor(private _dataServ: Data) {
     this.education = this._dataServ.education;
-    // this.experiance = this._dataServ.experience;
-    // this.hardSkills = this._dataServ.hardSkills;
-    // this.softSkills = this._dataServ.softSkills;
+    this.experiance = this._dataServ.experience;
+    this.hardSkills = this._dataServ.hardSkills;
+    this.softSkills = this._dataServ.softSkills;
   }
 }

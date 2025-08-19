@@ -1,27 +1,29 @@
 import { Component } from '@angular/core';
-import { IEducation } from '../../interfaces/education';
+import { IProjects } from '../../interfaces/projects';
 import { Data } from '../../services/data';
-import { MatStep, MatStepHeader, MatStepLabel, MatStepperModule } from '@angular/material/stepper';
+import { DatePipe } from '@angular/common';
+import { MatStep, MatStepLabel, MatStepperModule } from '@angular/material/stepper';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-  selector: 'app-education',
+  selector: 'app-projects',
   standalone: true,
   imports: [
+    DatePipe,
     MatStepperModule,
     MatFormFieldModule,
     MatStepLabel,
     MatStep,
     MatIconModule
   ],
-  templateUrl: './education.html',
-  styleUrl: './education.css'
+  templateUrl: './projects.html',
+  styleUrl: './projects.css'
 })
-export class Education {
-  protected education!: IEducation[];
+export class Projects {
+  protected projects!: IProjects;
 
   constructor(private _dataServ: Data) {
-    this.education = this._dataServ.education;
+    this.projects = this._dataServ.projects;
   }
 }

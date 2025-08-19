@@ -1,0 +1,40 @@
+<section class="job">
+  <mat-stepper orientation="vertical" #stepper linear>
+    @for (job of experience; track $index) {
+    <mat-step>
+      <!-- Должность -->
+      <ng-template matStepLabel>{{ job.position }}</ng-template>
+      <!-- Организация -->
+      <p>Организация: {{ job.company }}</p>
+
+      <!-- Обязанности -->
+      @if (job.options?.length) {
+      <article class="responsibilities">
+        <p>Обязанности:</p>
+        <ul>
+          @for (opt of job.options; track opt) {
+          <li>{{ opt }}</li>
+          }
+        </ul>
+      </article>
+      }
+
+      <!-- Ресурсы -->
+      <p>Ресурсы:</p>
+      @if (job.achievements?.length) {
+      <ul>
+        @for (ach of job.achievements; track $index) {
+        <li>
+          @if (ach.url) {
+          <a [href]="ach.url">{{ ach.description }}</a>
+          } @else {
+          <p>{{ ach.description }}</p>
+          }
+        </li>
+        }
+      </ul>
+      }
+    </mat-step>
+    }
+  </mat-stepper>
+</section>

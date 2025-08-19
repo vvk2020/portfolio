@@ -1,0 +1,90 @@
+<section class="projects">
+  <!-- Коммерческие проекты -->
+  @if (projects.commercial?.length) {
+  <h3>Коммерческие проекты</h3>
+  <article>
+    <ul>
+      @for (compro of projects.commercial; track $index) {
+      <li>
+        <!-- Название проекта -->
+        <h4>
+          <a href="{{ compro.url }}">{{ compro.title }}</a>
+          | {{ compro.year | date : "MM/yyyy " }}
+        </h4>
+        <!-- Описание проекта -->
+        <p>{{ compro.description }}</p>
+      </li>
+      }
+    </ul>
+  </article>
+  }
+
+  <!-- Pet-проекты -->
+  @if (projects.pet?.length) {
+  <h3>Pet-проекты</h3>
+  <article>
+    <ul>
+      @for (petpro of projects.pet; track $index) {
+      <li>
+        <!-- Название проекта -->
+        <h4>
+          <a href="{{ petpro.url }}">{{ petpro.title }}</a>
+          | {{ petpro.year | date : "MM/yyyy " }}
+        </h4>
+        <!-- Описание проекта -->
+        <p>{{ petpro.description }}</p>
+      </li>
+      }
+    </ul>
+  </article>
+  }
+
+  <mat-stepper orientation="vertical" #stepper linear>
+    <!-- Коммерческие проекты -->
+    @if (projects.commercial?.length) {
+    <mat-step>
+      <ng-template matStepLabel>
+        <p>Коммерческие проекты</p>
+        <article>
+          <ul>
+            @for (compro of projects.commercial; track $index) {
+            <li>
+              <!-- Название проекта -->
+              <h4>
+                <a href="{{ compro.url }}">{{ compro.title }}</a>
+                | {{ compro.year | date : "MM/yyyy " }}
+              </h4>
+              <!-- Описание проекта -->
+              <p>{{ compro.description }}</p>
+            </li>
+            }
+          </ul>
+        </article>
+      </ng-template>
+    </mat-step>
+    }
+    <!-- Pet-проекты -->
+    @if (projects.pet?.length) {
+    <mat-step>
+      <ng-template matStepLabel>
+        <p>Pet-проекты</p>
+        <article>
+          <ul>
+            @for (petpro of projects.pet; track $index) {
+            <li>
+              <!-- Название проекта -->
+              <h4>
+                <a href="{{ petpro.url }}">{{ petpro.title }}</a>
+                | {{ petpro.year | date : "MM/yyyy " }}
+              </h4>
+              <!-- Описание проекта -->
+              <p>{{ petpro.description }}</p>
+            </li>
+            }
+          </ul>
+        </article>
+      </ng-template>
+    </mat-step>
+    }
+  </mat-stepper>
+</section>
