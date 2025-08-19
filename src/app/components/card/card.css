@@ -1,0 +1,35 @@
+:host {
+  border: 2px solid var(--accent-color);
+  display: flex;
+  padding: 2%;
+  border-radius: 25px;
+  background-color: var(--card-bg);
+}
+
+/* Заголовок карточки */
+.card_title {
+  color: var(--accent-color);
+  border-right: 1px solid var(--accent-color);
+  inline-size: 40%;
+  font-size: 14px;
+}
+
+/* Описание карточки */
+.card_text {
+  padding: 1%;
+  color: var(--text-color);
+  border: 1px solid lime;
+  inline-size: 100%;
+  font-size: clamp(1rem, 0.8864rem + 0.4848vw, 1.25rem);
+}
+
+@media (max-width: 768px) {
+  :host {
+    flex-direction: column;
+  }
+
+  .card_title {
+    border-right: none;
+
+  }
+}

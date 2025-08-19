@@ -13,3 +13,45 @@
     <button matButton matStepperPrevious>Back</button>
   </mat-step>
 </mat-stepper>
+
+<app-header></app-header>
+
+<app-cards-list>
+  <!-- Образование -->
+  @if (education) {
+  <app-card>
+    <h2 class="cardTitle">Образование</h2>
+    <app-education></app-education>
+  </app-card>
+  }
+
+  <!-- Опыт работы -->
+  <!-- @if (experiance) {
+  <app-card>
+    <h2 class="cardTitle">Опыт работы</h2>
+    <app-experience></app-experience>
+  </app-card>
+  } -->
+
+  <!-- Профессиональные навыки -->
+  <!-- @if (hardSkills.length) {
+  <app-card>
+    <h2 class="cardTitle">Навыки</h2>
+    <app-skills [skills]="hardSkills"></app-skills>
+  </app-card>
+  } -->
+
+  <!-- Личные качества -->
+  <!-- @if (softSkills.length) {
+  <app-card>
+    <h2 class="cardTitle">Личные качества</h2>
+    <app-skills [skills]="softSkills"></app-skills>
+  </app-card>
+  } -->
+
+  <!-- Дополнительная информация -->
+  <!-- <app-card>
+    <h2 class="cardTitle">Разработки</h2>
+    <app-projects></app-projects>
+  </app-card> -->
+</app-cards-list>

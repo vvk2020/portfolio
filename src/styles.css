@@ -1,5 +1,43 @@
-/* You can add global styles to this file, and also import other style files */
-@import '@angular/material/prebuilt-themes/indigo-pink.css';
+@import '@angular/material/prebuilt-themes/indigo-pink.css'; */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  /* Стандартная палитра цветов */
+  --accent-color: #9d121e; /* акцентный */
+  --text-color: #1e3d7b; /* обычный текст */
+  --card-bg: #e5daf8; /* фон карточек */
+
+  /* Размеры*/
+  --min-width: 375px;
+
+  margin: 0;
+  font-family: SanFrancisco, sans-serif;
+  color: var(--text-color);
+  background-color: white;
+
+  max-inline-size: 1000px;
+  min-inline-size: var(--min-width);
+  margin: 0 auto;
+  padding-inline: 10px;
+  line-height: 250%;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+html,
+body {
+  height: 100%;
+}
