@@ -33,16 +33,6 @@
   font-size: clamp(1rem, 0.8864rem + 0.4848vw, 1.25rem);
 }
 
-.link {
-  color: inherit;
-  text-decoration: none;
-}
-
-.link:hover {
-  text-decoration: underline;
-  color: var(--accent-color);
-}
-
 .photo-wrapper {
   display: flex;
   justify-content: center;

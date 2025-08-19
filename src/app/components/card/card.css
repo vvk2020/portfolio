@@ -8,17 +8,19 @@
 
 /* Заголовок карточки */
 .card_title {
+  flex-shrink: 0;
   color: var(--accent-color);
   border-right: 1px solid var(--accent-color);
-  inline-size: 40%;
+  inline-size: 20%;
   font-size: 14px;
+  padding: 15px;
 }
 
 /* Описание карточки */
 .card_text {
   padding: 1%;
   color: var(--text-color);
-  border: 1px solid lime;
+  /* border: 1px solid lime; */
   inline-size: 100%;
   font-size: clamp(1rem, 0.8864rem + 0.4848vw, 1.25rem);
 }
@@ -30,6 +32,6 @@
 
   .card_title {
     border-right: none;
-
+  inline-size: 100%;
   }
 }

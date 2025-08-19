@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -15,6 +15,8 @@ import { Experience } from './components/experience/experience';
 import { Skill } from './types/skills';
 import { Skills } from './components/skills/skills';
 import { Projects } from './components/projects/projects';
+import { Title } from '@angular/platform-browser';
+import { IPerson } from './interfaces/person';
 
 @Component({
   selector: 'app-root',
@@ -39,16 +41,30 @@ import { Projects } from './components/projects/projects';
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
+export class App implements OnInit {
+  protected person!: IPerson;
   protected education!: IEducation[];
   protected experiance!: IExperience[];
   protected hardSkills!: Skill[];
   protected softSkills!: Skill[];
 
-  constructor(private _dataServ: Data) {
+  constructor(
+    private _dataServ: Data,
+    protected title: Title
+  ) {
+    this.person = this._dataServ.person;
     this.education = this._dataServ.education;
     this.experiance = this._dataServ.experience;
     this.hardSkills = this._dataServ.hardSkills;
     this.softSkills = this._dataServ.softSkills;
+  }
+
+  ngOnInit(): void {
+    // Заголовок страницы приложения
+    this.title.setTitle(
+      this.person.surName.trim() + ' ' +
+      this.person.firstName.trim().charAt(0)+ '. '+
+      this.person.lastName?.trim().charAt(0)+ '.'
+    );
   }
 }

@@ -5,12 +5,12 @@
     <ng-template matStepLabel>Коммерческие проекты</ng-template>
     <ul>
       @for (compro of projects.commercial; track $index) {
-      <li>
+      <li class="list-item">
         <!-- Название проекта -->
-        <h4>
-          <a href="{{ compro.url }}">{{ compro.title }}</a>
+        <p>
+          <a href="{{ compro.url }}" class="link">{{ compro.title }}</a>
           | {{ compro.year | date : "MM/yyyy " }}
-        </h4>
+        </p>
         <!-- Описание проекта -->
         <p>{{ compro.description }}</p>
       </li>
@@ -24,12 +24,12 @@
     <ng-template matStepLabel>Pet-проекты</ng-template>
     <ul>
       @for (petpro of projects.pet; track $index) {
-      <li>
+      <li class="list-item">
         <!-- Название проекта -->
-        <h4>
-          <a href="{{ petpro.url }}">{{ petpro.title }}</a>
+        <p>
+          <a href="{{ petpro.url }}" class="link">{{ petpro.title }}</a>
           | {{ petpro.year | date : "MM/yyyy " }}
-        </h4>
+        </p>
         <!-- Описание проекта -->
         <p>{{ petpro.description }}</p>
       </li>

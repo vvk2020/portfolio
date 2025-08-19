@@ -9,26 +9,29 @@
     @if (person.dateBird) {
     <p>Дата рождения: {{ person.dateBird | date : "dd.MM.yyyy" }}</p>
     }
-    <p>Город: {{ person.city }}</p>
-    <p>Уровень английского язка: {{ person.engLevel }}</p>
+    <p><span class="accent-text">Город:</span> {{ person.city }}</p>
+    <p>
+      <span class="accent-text">Уровень английского язка:</span>
+      {{ person.engLevel }}
+    </p>
 
     <!-- Цели посещения курса -->
     @if (person.course.goals.length) {
-    <p>Цели посещения курса:</p>
+    <p class="accent-text">Цели изучения курса:</p>
     <ul>
       @for (goal of person.course.goals; track $index) {
-      <li>{{ goal }}</li>
+      <li class="list-item">{{ goal }}</li>
       }
     </ul>
     }
-    <p>Источник информации о курсе: {{ person.course.howKnow }}</p>
+    <p><span class="accent-text">Источники информации о курсе:</span> {{ person.course.howKnow }}</p>
 
     <!-- Контакты -->
     @if (person.contacts.length) {
-    <p class="contacts__title">Контакты:</p>
+    <p class="accent-text contacts__title">Контакты:</p>
     <ul class="contacts__list">
       @for (contact of person.contacts; track $index) {
-      <li class="contacts__list-item">
+      <li>
         <a href="{{ contact.value }}" class="link contacts__link">
           <img
             src="{{ contact.logo }}"
