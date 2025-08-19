@@ -16,7 +16,6 @@ body {
   --mat-stepper-container-color: transparent; /* фон */
   --mat-stepper-header-selected-state-label-text-color: var(--accent-color); /* заголовок элемента списка */
   --mat-stepper-header-label-text-size: var(--normal-font-size);
-  /* --mat-sys-title-small-size: var(--normal-font-size); */
   --mat-stepper-header-label-text-font: SanFrancisco, sans-serif;
   /* font-size: var(--mat-stepper-header-label-text-size, var(--mat-sys-title-small-size)); */
   /* font-family: var(--mat-stepper-header-label-text-font, var(--mat-sys-title-small-font)); */

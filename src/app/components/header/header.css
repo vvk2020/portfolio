@@ -2,13 +2,12 @@
   border: 2px solid var(--accent-color);
   display: flex;
   align-items: start;
-  padding: 2%;
+  padding: 5%;
   border-radius: 25px;
   background-color: var(--card-bg);
 }
 
 .text-block {
-  padding: 20px;
   inline-size: 70%;
   flex-shrink: 0;
 }
