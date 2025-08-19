@@ -1,0 +1,45 @@
+<div class="photo-wrapper">
+  <img src="/images/photo.jpg" alt="Фото Кузнецова ВВ" class="photo" />
+</div>
+<div class="text-block">
+  <h1 class="main-title">{{ person | fullPersonlName | uppercase }}</h1>
+  <!-- В h1 можно обойтись только интерполяцией (без fullPersonlName) -->
+  <div class="position">{{ position | uppercase }}</div>
+  <div class="person-data">
+    @if (person.dateBird) {
+    <p>Дата рождения: {{ person.dateBird | date : "dd.MM.yyyy" }}</p>
+    }
+    <p>Город: {{ person.city }}</p>
+    <p>Уровень английского язка: {{ person.engLevel }}</p>
+
+    <!-- Цели посещения курса -->
+    @if (person.course.goals.length) {
+    <p>Цели посещения курса:</p>
+    <ul>
+      @for (goal of person.course.goals; track $index) {
+      <li>{{ goal }}</li>
+      }
+    </ul>
+    }
+    <p>Источник информации о курсе: {{ person.course.howKnow }}</p>
+
+    <!-- Контакты -->
+    @if (person.contacts.length) {
+    <p class="contacts__title">Контакты:</p>
+    <ul class="contacts__list">
+      @for (contact of person.contacts; track $index) {
+      <li class="contacts__list-item">
+        <a href="{{ contact.value }}" class="link contacts__link">
+          <img
+            src="{{ contact.logo }}"
+            alt="{{ contact.text }}"
+            class="contacts__logo-image"
+          />
+          <span class="contacts__text">{{ contact.text }}</span>
+        </a>
+      </li>
+      }
+    </ul>
+    }
+  </div>
+</div>
