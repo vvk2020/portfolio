@@ -17,11 +17,13 @@ import { Skills } from './components/skills/skills';
 import { Projects } from './components/projects/projects';
 import { Title } from '@angular/platform-browser';
 import { IPerson } from './interfaces/person';
+import { MatChipsModule } from '@angular/material/chips';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
+    /* Components */
     Header,
     Card,
     CardsList,
@@ -29,13 +31,14 @@ import { IPerson } from './interfaces/person';
     Experience,
     Skills,
     Projects,
-
+    /* Angular Material */
     MatButtonModule,
     MatStepperModule,
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatChipsModule,
 
   ],
   templateUrl: './app.html',
@@ -47,6 +50,8 @@ export class App implements OnInit {
   protected experiance!: IExperience[];
   protected hardSkills!: Skill[];
   protected softSkills!: Skill[];
+
+  readonly bestBoys: string[] = ['Samoyed', 'Akita Inu', 'Alaskan Malamute', 'Siberian Husky'];
 
   constructor(
     private _dataServ: Data,
@@ -63,8 +68,9 @@ export class App implements OnInit {
     // Заголовок страницы приложения
     this.title.setTitle(
       this.person.surName.trim() + ' ' +
-      this.person.firstName.trim().charAt(0)+ '. '+
-      this.person.lastName?.trim().charAt(0)+ '.'
+      this.person.firstName.trim().charAt(0) + '. ' +
+      this.person.lastName?.trim().charAt(0) + '.'
     );
+
   }
 }

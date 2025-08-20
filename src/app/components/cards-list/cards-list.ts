@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ContentChildren, OnInit, QueryList } from '@angular/core';
+import { Card } from '../card/card';
 
 @Component({
   selector: 'app-cards-list',
@@ -6,6 +7,12 @@ import { Component } from '@angular/core';
   templateUrl: './cards-list.html',
   styleUrl: './cards-list.css'
 })
-export class CardsList {
+export class CardsList implements AfterViewInit {
+
+  @ContentChildren(Card) cardsList!: QueryList<Card>;
+
+  ngAfterViewInit(): void {
+    console.log("this.cardsList", this.cardsList);
+  }
 
 }
