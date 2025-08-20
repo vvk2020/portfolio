@@ -17,7 +17,7 @@ import { Skills } from './components/skills/skills';
 import { Projects } from './components/projects/projects';
 import { Title } from '@angular/platform-browser';
 import { IPerson } from './interfaces/person';
-import { MatChipsModule } from '@angular/material/chips';
+import { CardSelector } from './components/card-selector/card-selector';
 
 @Component({
   selector: 'app-root',
@@ -31,6 +31,7 @@ import { MatChipsModule } from '@angular/material/chips';
     Experience,
     Skills,
     Projects,
+    CardSelector,
     /* Angular Material */
     MatButtonModule,
     MatStepperModule,
@@ -38,8 +39,6 @@ import { MatChipsModule } from '@angular/material/chips';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatChipsModule,
-
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'
@@ -50,8 +49,6 @@ export class App implements OnInit {
   protected experiance!: IExperience[];
   protected hardSkills!: Skill[];
   protected softSkills!: Skill[];
-
-  readonly bestBoys: string[] = ['Samoyed', 'Akita Inu', 'Alaskan Malamute', 'Siberian Husky'];
 
   constructor(
     private _dataServ: Data,

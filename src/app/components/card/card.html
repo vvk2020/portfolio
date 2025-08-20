@@ -1,6 +1,8 @@
+@if (isVisible) {
 <h2 class="card_title">
   <ng-content select=".cardTitle" #cardTitle></ng-content>
 </h2>
 <div class="card_text">
   <ng-content></ng-content>
 </div>
+}

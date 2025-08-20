@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ContentChild, ElementRef, QueryList } from '@angular/core';
+import { AfterViewInit, Component, ContentChild, ElementRef, Input, QueryList } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -9,6 +9,7 @@ import { AfterViewInit, Component, ContentChild, ElementRef, QueryList } from '@
 export class Card implements AfterViewInit {
   private _title?: string;
   @ContentChild('cardTitle') cardTitle!: ElementRef;
+  @Input() isVisible: boolean = true;
 
   ngAfterViewInit(): void {
     if (this.cardTitle) {

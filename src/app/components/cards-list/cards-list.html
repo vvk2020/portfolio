@@ -1,1 +1,28 @@
-<ng-content></ng-content>
+<!-- <ng-content></ng-content> -->
+
+<div class="controls">
+  <button (click)="hideAllCards()">Скрыть все</button>
+  <button (click)="showAllCards()">Показать все</button>
+
+  @for (title of cardsTitles; track title) {
+    <button (click)="toggleCardByTitle(title)">
+      {{ isCardVisible(title) ? 'Скрыть' : 'Показать' }} {{ title }}
+    </button>
+  }
+</div>
+
+<!-- Отображаем только видимые карточки -->
+@for (card of cardsList; track card) {
+  @if (card.title && isCardVisible(card.title)) {
+    <ng-container [ngTemplateOutlet]="cardTemplate"
+                  [ngTemplateOutletContext]="{ $implicit: card }"></ng-container>
+  }
+}
+
+<!-- Шаблон для отображения карточки -->
+<ng-template #cardTemplate let-card>
+  <!-- <app-card> -->
+    <ng-content select="[cardTitle]"></ng-content>
+    <ng-content></ng-content>
+  <!-- </app-card> -->
+</ng-template>
